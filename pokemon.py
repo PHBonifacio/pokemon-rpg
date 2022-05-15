@@ -1,9 +1,9 @@
 import random
 class Pokemon:
 
-    def __init__(self, tipo, especie, level, nome = None) -> None:
+    def __init__(self, tipo, specie, level, nome = None) -> None:
         self.tipo = tipo
-        self.especie = especie
+        self.specie = specie
         if level:
             self.level = level
         else:
@@ -12,40 +12,40 @@ class Pokemon:
         if nome:
             self.nome = nome
         else:
-            self.nome = especie
+            self.nome = specie
 
     def __str__(self) -> str:
-        return "{} ({}) Level : {}".format(self.especie, self.tipo, self.level)
+        return "{} ({}) Level : {}".format(self.specie, self.tipo, self.level)
 
     def attack(self, pokemon) -> None:
         print("{} attacked {}".format(self, pokemon))
 
 class EletricPokemon(Pokemon):
     SPECIES = ["Pikachu", "Raichu", "Electabuzz", 'Regieleki']
-    def __init__(self, especie = None, level= None, nome= None) -> None:
-        if not especie:
-            especie = random.choice(self.SPECIES)
+    def __init__(self, specie = None, level= None, nome= None) -> None:
+        if not specie:
+            specie = random.choice(self.SPECIES)
 
-        super().__init__("Eletric", especie, level, nome)
+        super().__init__("Eletric", specie, level, nome)
 
     def attack(self, pokemon) -> None:
         print("{} used thundershock on {}".format(self, pokemon))
 
 class FirePokemon(Pokemon):
     SPECIES = ["Charmander", "Flareon", "Charizard", 'Fuecoco']
-    def __init__(self, especie = None, level= None, nome= None) -> None:
-        if not especie:
-            especie = random.choice(self.SPECIES)
+    def __init__(self, specie = None, level= None, nome= None) -> None:
+        if not specie:
+            specie = random.choice(self.SPECIES)
 
-        super().__init__("Fire", especie, level, nome)
+        super().__init__("Fire", specie, level, nome)
 
     def attack(self, pokemon) -> None:
         print("{} used fire ball on {}".format(self, pokemon))
 
 class WaterPokemon(Pokemon):
     SPECIES = ["Blastoise", "Magikarp", "Quaxly", 'Lapras']
-    def __init__(self, especie = None, level= None, nome= None) -> None:
-        if not especie:
-            especie = random.choice(self.SPECIES)
+    def __init__(self, specie = None, level= None, nome= None) -> None:
+        if not specie:
+            specie = random.choice(self.SPECIES)
 
-        super().__init__("Water", especie, level, nome)
+        super().__init__("Water", specie, level, nome)
